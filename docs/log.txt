@@ -391,3 +391,9 @@ page and view movies page. Clicking removed scrollbar and added padding-right 17
 modal-open class to inherit overflow and for padding-right to be 0 with the !important rule to stop overriding.
 
 Added favicon.
+
+
+10/19/21 - Made updates for jpeg files not being visible on view movies page. Only jpg file were being displayed. 
+Added column to movies table for file extension of the image file. Updated add and edit of movies to save the
+file extension string to the column. On the front end, I updated the ng-src to concatenate the image path and
+movie hash string and image filename extension together instead of just adding '.jpg' to the end.

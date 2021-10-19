@@ -33,13 +33,14 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         $imageUploaded = true;
     } else {
         $imageUploaded = false;
+        $fileExtension = null;
     }
        
     try {
         // Save new movie
-        $sql = 'INSERT INTO movies (`title`, `description`, `notes`, `hash`, `image_uploaded`, `date_watched`, `year_released`) VALUES (?, ?, ?, ?, ?, ?, ?)';
+        $sql = 'INSERT INTO movies (`title`, `description`, `notes`, `hash`, `image_uploaded`, `image_filename_extension`, `date_watched`, `year_released`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
         $stmt = $pdo->prepare($sql);
-        $result = $stmt->execute([$title, $description, $notes, $hash, $imageUploaded, $dateWatched, $yearReleased]);
+        $result = $stmt->execute([$title, $description, $notes, $hash, $imageUploaded, $fileExtension, $dateWatched, $yearReleased]);
         $newMovieId = $pdo->lastInsertId();
 
         // Save each director for movie to `directors_movies` table.

@@ -38,12 +38,13 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         move_uploaded_file($_FILES['picture']['tmp_name'], $uploadsPath);
     } else {
         $imageUploaded = false;
+        $fileExtension = null;
     }
        
     try {
         if ($imageUploaded) {
             $sql = 'UPDATE movies 
-                    SET `title` = ?, `description` = ?, `notes` = ?, `image_uploaded` = ? ,  `date_watched` = ?, `year_released` = ? 
+                    SET `title` = ?, `description` = ?, `notes` = ?, `image_uploaded` = ? , `image_filename_extension` = ?,  `date_watched` = ?, `year_released` = ? 
                     WHERE `id` = ?';
         } else  {
             $sql = 'UPDATE movies 
@@ -52,7 +53,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         }
         $stmt = $pdo->prepare($sql);
         if ($imageUploaded) {
-            $result = $stmt->execute([$title, $description, $notes, $imageUploaded, $dateWatched, $yearReleased, $movieId]);
+            $result = $stmt->execute([$title, $description, $notes, $imageUploaded, $fileExtension, $dateWatched, $yearReleased, $movieId]);
         } else {
             $result = $stmt->execute([$title, $description, $notes, $dateWatched, $yearReleased, $movieId]);
         }

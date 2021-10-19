@@ -1,6 +1,6 @@
 <?php ini_set('display_errors', 0); ?>
-<?php include '../config/connect.php' ?>
-<?php include 'addMovie.php' ?>
+<?php include '../config/connect.php'; ?>
+<?php include 'addMovie.php'; ?>
 <?php include 'views/header.php'; ?>
 
 <!-- home -->
@@ -120,7 +120,7 @@
             <tr ng-repeat="movie in movies | orderBy: sortType : sortReverse | filter: searchFilter">
                 <td>
                     <b>[[movie.title]]</b><br><br>
-                    <img ng-src="[['uploads/img/' + movie.hash + '.jpg']]" onerror="this.src='uploads/img/default.jpg'" 
+                    <img ng-src="[['uploads/img/' + movie.hash + '.' + movie.image_filename_extension ]]" onerror="this.src='uploads/img/default.jpg'" 
                             alt="[[movie.title + ' Picture']]" title="[[movie.title + ' Picture']]" width="140">
                 </td>
                 <td><span ng-repeat="director in movie.directors">[[director.first_name]] [[director.middle_name]] [[director.last_name]]<br></span></td>
