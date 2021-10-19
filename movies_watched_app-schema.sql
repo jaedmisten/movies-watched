@@ -28,7 +28,7 @@ CREATE TABLE `directors` (
   `middle_name` varchar(30) DEFAULT NULL,
   `last_name` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,8 +42,10 @@ CREATE TABLE `directors_movies` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `directors_id` int(10) unsigned NOT NULL,
   `movies_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  KEY `fk_directors` (`directors_id`),
+  CONSTRAINT `fk_directors` FOREIGN KEY (`directors_id`) REFERENCES `directors` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,10 +62,11 @@ CREATE TABLE `movies` (
   `notes` mediumtext,
   `hash` varchar(32) NOT NULL,
   `image_uploaded` smallint(6) DEFAULT NULL,
+  `image_filename_extension` varchar(6) DEFAULT NULL,
   `date_watched` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `year_released` int(4) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -75,4 +78,4 @@ CREATE TABLE `movies` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-24 18:44:49
+-- Dump completed on 2021-10-19 14:03:24

@@ -397,3 +397,6 @@ Added favicon.
 Added column to movies table for file extension of the image file. Updated add and edit of movies to save the
 file extension string to the column. On the front end, I updated the ng-src to concatenate the image path and
 movie hash string and image filename extension together instead of just adding '.jpg' to the end.
+
+Recreated a mysql dump file with the new database column. Also, removed the auto_increment attribute from the
+CREATE TABLE commands.
