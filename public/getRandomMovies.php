@@ -19,13 +19,13 @@ try {
 
         // Get first row of movie hashes for home page.
         for ($i = 0; $i <= 2; $i++) {
-            $randomMovieHashes[] = $movies[$randomKeys[$i]]['hash'];
+            $randomMovieHashes[] = $movies[$randomKeys[$i]]['hash'] . '.' . $movies[$randomKeys[$i]]['image_filename_extension'];
         }
 
         if ( $numMovies >= 6 ) {
             // Get second row of movie hashes for home page.
             for (; $i <= 5; $i++) {
-                $randomMovieHashes[] = $movies[$randomKeys[$i]]['hash'];
+                $randomMovieHashes[] = $movies[$randomKeys[$i]]['hash'] . '.' . $movies[$randomKeys[$i]]['image_filename_extension'];
             }
         }
 

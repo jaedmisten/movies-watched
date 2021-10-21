@@ -400,3 +400,8 @@ movie hash string and image filename extension together instead of just adding '
 
 Recreated a mysql dump file with the new database column. Also, removed the auto_increment attribute from the
 CREATE TABLE commands.
+
+
+10/21/21 - Made updates for jpeg files not visible on home page for showing random movie images. Added the filename 
+extension to the movie hash string that is returned by getRandomMovie.php and updated the angularJS to not 
+concatenate '.jpg'.
