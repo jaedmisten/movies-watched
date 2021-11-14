@@ -10,11 +10,11 @@ try {
     
     echo json_encode($directors);
 } catch (PDOException $e) {
-    echo 'IT FAILED!!!<br><br>';
-    echo '<pre>';
-    var_dump($e);
-    echo '</pre>';
-    echo $e->getMessage();
+    error_log("Error retrieving directors.", 0);
+    error_log($e->getMessage(), 0);
+    error_log($e->getTraceAsString(), 0);
+
+    header('HTTP/1.0 500 Retrieving Directors Failed');
 }
 
 

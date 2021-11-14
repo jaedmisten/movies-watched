@@ -25,7 +25,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     }
      
     try {
-        $sql = 'UPDATE directors 
+        $sql = 'UPDATE directors
                 SET `first_name` = ?, `middle_name` = ?, `last_name` = ? 
                 WHERE `id` = ?';
         $stmt = $pdo->prepare($sql);
@@ -33,11 +33,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
 
         return true;
     } catch (PDOException $e) {
-        echo 'IT FAILED!!!<br><br>';
-        echo '<pre>';
-        var_dump($e);
-        echo '</pre>';
-        echo $e->getMessage();
+        error_log("Error updating director.", 0);
+        error_log($e->getMessage(), 0);
+        error_log($e->getTraceAsString(), 0);
 
         return $movieEdited = false;
     }   

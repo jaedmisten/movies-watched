@@ -25,11 +25,11 @@ try {
     
     echo json_encode($movies);
 } catch (PDOException $e) {
-    echo 'IT FAILED!!!<br><br>';
-    echo '<pre>';
-    var_dump($e);
-    echo '</pre>';
-    echo $e->getMessage();
+    error_log("Error retrieving movies for watched movies page.", 0);
+    error_log($e->getMessage(), 0);
+    error_log($e->getTraceAsString(), 0);
+
+    header('HTTP/1.0 500 Movie Deletion Failed');
 }
 
 

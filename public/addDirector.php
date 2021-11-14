@@ -34,11 +34,9 @@ try {
 
     echo json_encode($director);
 } catch (PDOException $e) {
-    echo 'IT FAILED!!!<br><br>';
-    echo '<pre>';
-    var_dump($e);
-    echo '</pre>';
-    echo $e->getMessage();
+    error_log("Error inserting director.", 0);
+    error_log($e->getMessage(), 0);
+    error_log($e->getTraceAsString(), 0);
 
     return $movieInserted = false;
 } 

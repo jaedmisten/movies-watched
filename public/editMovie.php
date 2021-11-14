@@ -43,7 +43,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
        
     try {
         if ($imageUploaded) {
-            $sql = 'UPDATE movies 
+            $sql = 'UPDATE movies
                     SET `title` = ?, `description` = ?, `notes` = ?, `image_uploaded` = ? , `image_filename_extension` = ?,  `date_watched` = ?, `year_released` = ? 
                     WHERE `id` = ?';
         } else  {
@@ -71,19 +71,15 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
                 $stmt = $pdo->prepare($sql);
                 $result = $stmt->execute([$_POST['director'][$i], $movieId]);
             }
-        }
-        
+        }      
 
         $movieEdited = true;
         header('Location: index.php');
     } catch (PDOException $e) {
-        echo 'IT FAILED!!!<br><br>';
-        echo '<pre>';
-        var_dump($e);
-        echo '</pre>';
-        echo $e->getMessage();
+        error_log("Error updating movie.", 0);
+        error_log($e->getMessage(), 0);
+        error_log($e->getTraceAsString(), 0);
 
         return $movieEdited = false;
-    } 
-    
+    }  
 }

@@ -28,6 +28,9 @@ try {
 
     echo $result;
 } catch (PDOException $e) {
-    echo 'Error: ' . $e->getCode() . " - " . $e->getMessage();
+    error_log("Error deleting movie.", 0);
+    error_log($e->getMessage(), 0);
+    error_log($e->getTraceAsString(), 0);
+
     header('HTTP/1.0 500 Movie Deletion Failed');
 }

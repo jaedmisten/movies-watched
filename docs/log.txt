@@ -405,3 +405,7 @@ CREATE TABLE commands.
 10/21/21 - Made updates for jpeg files not visible on home page for showing random movie images. Added the filename 
 extension to the movie hash string that is returned by getRandomMovie.php and updated the angularJS to not 
 concatenate '.jpg'.
+
+
+11/14/21 - Removed var_dumping exceptions that are thrown for database operations. Added logging to error log.
+An error message is logged along with the exception message and the call stack.
