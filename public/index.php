@@ -336,6 +336,24 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<!-- Director add failed modal -->
+<div id="directorAddFailedModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click=""><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Director Add Failed</h4>
+        </div>
+        <div class="modal-body">
+            <p>Unable to be add new director to the list of directors.</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToManageDirectorsPage()">Close</button>
+        </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <!-- Delete director modal -->
 <div id="deleteDirectorModal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -383,8 +401,7 @@
             <h4 class="modal-title">Director Delete Failed</h4>
         </div>
         <div class="modal-body">
-            <p>The <b>[[currentDirector.first_name]] [[currentDirector.middle_name]] [[currentDirector.last_name]]</b> was unable to be deleted from the list of directors. The following error occured:</p>
-            <p class="error-message">[[errorMessage]]</p>
+            <p>The <b>[[currentDirector.first_name]] [[currentDirector.middle_name]] [[currentDirector.last_name]]</b> was unable to be deleted from the list of directors.</p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToManageDirectorsPage()">Close</button>
@@ -453,8 +470,7 @@
             <h4 class="modal-title">Director Edit Failed</h4>
         </div>
         <div class="modal-body">
-            <p>The <b>[[currentDirector.first_name]] [[currentDirector.middle_name]] [[currentDirector.last_name]]</b> was unable to be edited. The following error occured:</p>
-            <p class="error-message">[[errorMessage]]</p>
+            <p>The <b>[[currentDirector.first_name]] [[currentDirector.middle_name]] [[currentDirector.last_name]]</b> was unable to be edited.</p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="goToManageDirectorsPage()">Close</button>

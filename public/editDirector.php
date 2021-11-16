@@ -37,6 +37,6 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
         error_log($e->getMessage(), 0);
         error_log($e->getTraceAsString(), 0);
 
-        return $movieEdited = false;
+        header('HTTP/1.0 500 Director Update Failed');
     }   
 }

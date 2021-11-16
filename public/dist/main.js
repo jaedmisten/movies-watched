@@ -18,6 +18,7 @@ function ($scope, $http, $window) {
     $scope.directorSortType = 'last_name';
     $scope.directorSortReverse = false;
     $scope.addDirectorStatus = false;
+
     $scope.goToHomePage = function() {
         $window.location.href = '/';
     };
@@ -163,10 +164,8 @@ function ($scope, $http, $window) {
                 
                 $('#addDirectorModal').modal('hide');
             }, function(response) {
-                console.log('Error callback');
-                $scope.errorMessage = response.data;
-                console.log('$scope.errorMessage', $scope.errorMessage);
-
+                $('#addDirectorModal').modal('hide');
+                $('#directorAddFailedModal').modal('show');
             }
         );  
     };
@@ -200,7 +199,6 @@ function ($scope, $http, $window) {
 
     $scope.deleteDirector = function() {
         var postData = 'directorId=' + $scope.currentDirector.id;
-        console.log('postData: ', postData);
         var config = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
@@ -211,10 +209,6 @@ function ($scope, $http, $window) {
                 $('#deleteDirectorModal').modal('hide');
                 $('#directorDeletedModal').modal('show');
             }, function(response) {
-                console.log('Error callback');
-                $scope.errorMessage = response.data;
-                console.log('$scope.errorMessage', $scope.errorMessage);
-
                 $('#deleteDirectorModal').modal('hide');
                 $('#directorDeleteFailedModal').modal('show');
             }
@@ -242,10 +236,6 @@ function ($scope, $http, $window) {
                 $('#editDirectorModal').modal('hide');
                 $('#directorEditedModal').modal('show');
             }, function(response) {
-                console.log('Error callback');
-                $scope.errorMessage = response.data;
-                console.log('$scope.errorMessage', $scope.errorMessage);
-
                 $('#editDirectorModal').modal('hide');
                 $('#directorEditFailedModal').modal('show');
             }

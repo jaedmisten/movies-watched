@@ -409,3 +409,7 @@ concatenate '.jpg'.
 
 11/14/21 - Removed var_dumping exceptions that are thrown for database operations. Added logging to error log.
 An error message is logged along with the exception message and the call stack.
+
+
+11/16/21 - Fixed error responses for adding or editing a director so that if an exception is thrown a 500 error
+is returned. Added an error modal for failing to add director. 
