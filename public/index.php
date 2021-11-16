@@ -10,14 +10,14 @@
     <button class="btn btn-default" ng-click="goToManageDirectorsPage()">Manage Directors</button><br><br>
     <table id="random-movies-table">
         <tr ng-show="randomMovieHashes.length >= 3">
-            <td><img src="[['uploads/img/' + randomMovieHashes[0] ]]" width="100"></td>
-            <td><img src="[['uploads/img/' + randomMovieHashes[1] ]]" width="100"></td>
-            <td><img src="[['uploads/img/' + randomMovieHashes[2] ]]" width="100"></td>
+            <td><img ng-src="[['uploads/img/' + randomMovieHashes[0] ]]" width="100"></td>
+            <td><img ng-src="[['uploads/img/' + randomMovieHashes[1] ]]" width="100"></td>
+            <td><img ng-src="[['uploads/img/' + randomMovieHashes[2] ]]" width="100"></td>
         </tr>
         <tr ng-show="randomMovieHashes.length >= 6">
-            <td><img src="[['uploads/img/' + randomMovieHashes[3] ]]" width="100"></td>
-            <td><img src="[['uploads/img/' + randomMovieHashes[4] ]]" width="100"></td>
-            <td><img src="[['uploads/img/' + randomMovieHashes[5] ]]" width="100"></td>
+            <td><img ng-src="[['uploads/img/' + randomMovieHashes[3] ]]" width="100"></td>
+            <td><img ng-src="[['uploads/img/' + randomMovieHashes[4] ]]" width="100"></td>
+            <td><img ng-src="[['uploads/img/' + randomMovieHashes[5] ]]" width="100"></td>
         </tr>
     </table>
 </div>
