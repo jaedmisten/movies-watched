@@ -20,7 +20,11 @@ function ($scope, $http, $window) {
     $scope.addDirectorStatus = false;
 
     $scope.goToHomePage = function() {
-        $window.location.href = '/';
+        $scope.homePage = true;
+        $scope.addMoviePage = false;
+        $scope.viewMoviesPage = false;
+        $scope.editMoviePage = false;
+        $scope.manageDirectorsPage = false;
     };
 
     $scope.goToAddMoviePage = function() {
