@@ -417,3 +417,7 @@ is returned. Added an error modal for failing to add director.
 Fixed console errors when viewing home page that were 404 error for the random images. This was happening because
 src attribute was used for images instead of ng-src. Console errors happen with src because when loading page the
 browser will try to load image and fail before angular bootstrapping and creation of angular controllers.
+
+
+12/17/21 - Fixed bug where if jpeg file was used for movie picture then the edit page would not show the image.
+Needed to concatentate movie.image_filename_extension to the end of file name instead of 'jpg'.

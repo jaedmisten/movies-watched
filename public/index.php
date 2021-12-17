@@ -181,7 +181,7 @@
             <label for="edit-movie-picture">Photo</label>
             <input type="file" id="edit-movie-photo-file" name="picture" accept="image/*" title=""
                             onchange="angular.element(this).scope().updateEditMoviePhotoFile(this)" ng-click="updateEditMoviePhotoText()">
-            <img id="edit-movie-photo" style="margin-top:5px;" ng-src="[['uploads/img/' + movie.hash + '.jpg']]" onerror="this.src='uploads/img/default.jpg'"  
+            <img id="edit-movie-photo" style="margin-top:5px;" ng-src="[['uploads/img/' + movie.hash + '.' + movie.image_filename_extension]]" onerror="this.src='uploads/img/default.jpg'"  
                             alt="[[movie.title + ' Photo']]" title="[[movie.title + ' Photo']]" width="70">
         </div>
         <div class="form-group">
