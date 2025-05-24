@@ -421,3 +421,7 @@ browser will try to load image and fail before angular bootstrapping and creatio
 
 12/17/21 - Fixed bug where if jpeg file was used for movie picture then the edit page would not show the image.
 Needed to concatentate movie.image_filename_extension to the end of file name instead of 'jpg'.
+
+
+5/24/25 - Changed the 'Year Released' and 'Date Watched' input fields to have a static width of 100px.
+Previously removed left padding on these fields.

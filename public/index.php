@@ -53,8 +53,10 @@
             <a href="" ng-click="openAddDirectorModal()">Add Director</a>
         </div>
         <div class="form-group">
-            <label for="year_released">Year Released</label>
-            <input type="number" id="year_released" name="year_released" class="form-control" min="1900" max="[[currentYear]]">
+            <div><label for="year_released">Year Released</label></div>
+            <div class="date-watched-input remove-padding-left">
+                <input type="number" id="year_released" name="year_released" class="form-control" min="1900" max="[[currentYear]]">
+            </div>
         </div>
         <div class="form-group">
             <label for="picture">Photo</label>
@@ -63,9 +65,11 @@
             <img id="add-movie-photo" src="uploads/img/default.jpg" alt="Movie Photo" width="70">
         </div>
         <div class="form-group">
-            <label for="date_watched">Date Watched</label>
-            <input type="text" id="date_watched" name="date_watched" class="form-control" 
-                    data-provide="datepicker" data-date-end-date="0d" ng-model="date_watched" required>
+            <div><label for="date_watched">Date Watched</label></div>
+            <div class="date-watched-input remove-padding-left">
+                <input type="text" id="date_watched" name="date_watched" class="form-control" 
+                        data-provide="datepicker" data-date-end-date="0d" ng-model="date_watched" required>
+            </div>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary" ng-disabled="addMovieForm.$invalid">Submit</button>
@@ -174,8 +178,10 @@
             <a href="" ng-click="openAddDirectorModal()">Add Director</a>
         </div>
         <div class="form-group">
-            <label for="year_released">Year Released</label>
-            <input type="number" id="year_released" name="year_released" class="form-control" min="1900" max="2099" ng-model="movie.year_released">
+            <div><label for="year_released">Year Released</label></div>
+            <div class="date-watched-input remove-padding-left">
+                <input type="number" id="year_released" name="year_released" class="form-control" min="1900" max="2099" ng-model="movie.year_released">
+            </div>
         </div>
         <div class="form-group">
             <label for="edit-movie-picture">Photo</label>
@@ -185,9 +191,10 @@
                             alt="[[movie.title + ' Photo']]" title="[[movie.title + ' Photo']]" width="70">
         </div>
         <div class="form-group">
-            <label for="date_watched">Date Watched</label>
-            <input type="text" id="date_watched" name="date_watched" class="form-control" data-provide="datepicker" 
-                    data-date-end-date="0d" ng-model="movie.date_watched" required>
+            <div><label for="date_watched">Date Watched</label></div>
+            <div class="date-watched-input remove-padding-left">
+                <input type="text" id="date_watched" name="date_watched" class="form-control" data-provide="datepicker" data-date-end-date="0d" ng-model="movie.date_watched" required>
+            </div>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary" ng-click="editMovie()" ng-disabled="addMovieForm.$invalid">Submit</button>
