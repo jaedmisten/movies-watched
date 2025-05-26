@@ -5,9 +5,6 @@
 
 <!-- home -->
 <div id="home" ng-if="homePage" ng-init="getRandomMovies()" style="text-align: center;">
-    <button class="btn btn-default" ng-click="goToAddMoviePage()">Add Movie</button><br><br>
-    <button class="btn btn-default" ng-click="goToViewMoviesPage()">View Movies Watched</button><br><br>
-    <button class="btn btn-default" ng-click="goToManageDirectorsPage()">Manage Directors</button><br><br>
     <table id="random-movies-table">
         <tr ng-show="randomMovieHashes.length >= 3">
             <td><img ng-src="[['uploads/img/' + randomMovieHashes[0] ]]" width="100"></td>
