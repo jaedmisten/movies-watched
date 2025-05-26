@@ -35,8 +35,8 @@
             <div id="header">
                 <h1 id="title-header"><a id="home-link" href="" ng-click="goToHomePage()">Movies Watched App</a></h1>
                 <div style="text-align: center;">
-                    <button class="btn btn-default" ng-click="goToAddMoviePage()">Add Movie</button>
-                    <button class="btn btn-default" ng-click="goToViewMoviesPage()">View Movies Watched</button>
-                    <button class="btn btn-default" ng-click="goToManageDirectorsPage()">Manage Directors</button>
+                    <button class="btn btn-primary" ng-click="goToAddMoviePage()">Add Movie</button>
+                    <button class="btn btn-primary" ng-click="goToViewMoviesPage()">View Movies Watched</button>
+                    <button class="btn btn-primary" ng-click="goToManageDirectorsPage()">Manage Directors</button>
                 </div>
             </div>

@@ -425,3 +425,7 @@ Needed to concatentate movie.image_filename_extension to the end of file name in
 
 5/24/25 - Changed the 'Year Released' and 'Date Watched' input fields to have a static width of 100px.
 Previously removed left padding on these fields.
+
+
+5/26/25 - Changed menu buttons to be on all pages and be a horizontal layout instead of a vertical layout.
+Changed menu buttons to be bootstrap primary to be dark blue to match the site colors.
